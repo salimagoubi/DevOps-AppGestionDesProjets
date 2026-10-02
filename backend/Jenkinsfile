@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Git') {
+            steps {
+                echo 'Git checkout successful'
+            }
+        }
+
+        stage('Maven') {
+            steps {
+                sh 'mvn clean package -DskipTests'
+            }
+        }
+    }
+}
